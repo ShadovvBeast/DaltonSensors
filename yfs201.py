@@ -4,7 +4,7 @@ import RPi.GPIO as GPIO
 GPIO.setmode(GPIO.BCM)
 
 # set up the GPIO channels - one input and one output
-GPIO.setup(11, GPIO.IN)
+GPIO.setup(5, GPIO.IN)
 
 # input from pin 11
 input_value = GPIO.input(5)
