@@ -32,7 +32,8 @@ while True:
     minutes += 1
     print ('\nLitres / min', round(rate_cnt * constant, 4))
     print('\nTotal Litres', round(tot_cnt * constant, 4))
-    print('\nTime (min & clock)', minutes, '\t', time.asctime(time_new))
+    print('\nTime (min & clock)', minutes)
+
 GPIO.cleanup()
 print('Done');
 
