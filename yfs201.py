@@ -24,7 +24,7 @@ while True:
             tot_cnt += 1 # Total pulses
             try:
                 input_value = GPIO.input(pin_number)
-                print(input_value, end='')
+                print(input_value)
             except  KeyboardInterrupt: #Look for exit command
                 print('\nCTRL C - Exiting nicely')
                 GPIO.cleanup()
