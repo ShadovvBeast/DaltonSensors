@@ -1,6 +1,6 @@
 import RPi.GPIO as GPIO
 import time, sys
-pin_number = 5
+pin_number = 9
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(pin_number, GPIO.IN)
 
