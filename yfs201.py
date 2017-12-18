@@ -29,10 +29,12 @@ while True:
                 print('\nCTRL C - Exiting nicely')
                 GPIO.cleanup()
                 sys.exit()
+
     minutes += 1
     print ('\nLitres / min', round(rate_cnt * constant, 4))
     print('\nTotal Litres', round(tot_cnt * constant, 4))
     print('\nTime (min & clock)', minutes)
+    raw_input("Press the <ENTER> key to continue...")
 
 GPIO.cleanup()
 print('Done');
