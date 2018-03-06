@@ -3,4 +3,4 @@ from ds18b20 import DS18B20
 x = DS18B20()
 count=x.device_count()
 for i in range(0, count):
-    print(x.tempC(i))
+    print(x._read_temp(i))#print(x.tempC(i))
