@@ -1,4 +1,5 @@
 from ds18b20 import DS18B20
+import requests
 # test temperature sensors
 x = DS18B20()
 count=x.device_count()
