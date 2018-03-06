@@ -20,7 +20,6 @@ class DS18B20:
 	# connect pin 3 to GPIO 3.3V
 	# You can connect more than one sensor to the same set of pins
 	# Only one pullup resistor is required
-	
 	def __init__(self):
 		# load required kernel modules
 		os.system('modprobe w1-gpio')
