@@ -12,29 +12,27 @@ time_new = 0.0#Keep next time
 #input_value = GPIO.input(pin_number)
 
 print('Water Flow - Approximate')
-print('Control C to exit')
+#while True:
+time_new = time.time()  + 60
+rate_cnt = 0
+while time.time() <= time_new:
+    input_value = GPIO.input(pin_number) # Look for pulses
+    if input_value != 0:
+        rate_cnt += 1   # Pulses per time
+        tot_cnt += 1 # Total pulses
+        try:
+            input_value = GPIO.input(pin_number)
+            sys.stdout.write(str(input_value)),
+        except  KeyboardInterrupt: #Look for exit command
+            print('\nCTRL C - Exiting nicely')
+            GPIO.cleanup()
+            sys.exit()
 
-while True:
-    time_new = time.time() + 10 # + 60 = 1 minute
-    rate_cnt = 0
-    while time.time() <= time_new:
-        input_value = GPIO.input(pin_number) # Look for pulses
-        if input_value != 0:
-            rate_cnt += 1   # Pulses per time
-            tot_cnt += 1 # Total pulses
-            try:
-                input_value = GPIO.input(pin_number)
-                sys.stdout.write(str(input_value)),
-            except  KeyboardInterrupt: #Look for exit command
-                print('\nCTRL C - Exiting nicely')
-                GPIO.cleanup()
-                sys.exit()
-
-    minutes += 1
-    print ('\nLitres / min', round(rate_cnt * constant, 4))
-    print('\nTotal Litres', round(tot_cnt * constant, 4))
-    print('\nTime (min & clock)', minutes)
-    raw_input("Press the <ENTER> key to continue...")
+minutes += 1
+print ('\nLitres / min', round(rate_cnt * constant, 4))
+print('\nTotal Litres', round(tot_cnt * constant, 4))
+print('\nTime (min & clock)', minutes)
+ #   raw_input("Press the <ENTER> key to continue...")
 
 GPIO.cleanup()
 print('Done');
