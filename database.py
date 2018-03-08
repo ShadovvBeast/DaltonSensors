@@ -7,4 +7,4 @@ collection = db.dt_sensor_data
 def insert_data(data):
     r = requests.post("http://www.dalton.farm/sensors/insert_data.php", data=data)
     id = collection.insert_one(data).inserted_id
-    return (id & r.status_code == 200)
+    return (id and r.status_code == 200)
