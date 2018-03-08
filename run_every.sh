@@ -3,7 +3,7 @@ while true
 cnt = 0
 do
     if ! ((cnt % 60)); then
-        python yfs201.py
+        nohup python yfs201.py &>/dev/null &
     fi
     python temperature.py
     python mcp3008.py
