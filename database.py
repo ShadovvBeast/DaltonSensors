@@ -7,6 +7,6 @@ collection = db.dt_sensor_data
 
 def insert_data(data):
     r = requests.post("http://www.dalton.farm/sensors/insert_data.php", data=data)
-    data.timestamp = str(datetime.datetime.utcnow())
+    data['timestamp'] = str(datetime.datetime.utcnow())
     id = collection.insert_one(data).inserted_id
     return (id and r.status_code == 200)
